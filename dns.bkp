@@ -1,0 +1,21 @@
+provider "dnsimple" {
+  token = "${var.dnsimple_token}"
+  account = "${var.dnsimple_account}"
+}
+
+# Add a record to the root domain
+resource "dnsimple_record" "www" {
+  domain = "${var.dnsimple_domain}"
+  name   = ""
+  value  = "${aws_instance.web.0.public_ip}"
+  type   = "A"
+  ttl    = 3600
+}
+# Add a record to a sub-domain
+resource "dnsimple_record" "www" {
+  domain = "${var.dnsimple_domain}"
+  name   = "www"
+  value  = "${aws_instance.web.0.public_ip}"
+  type   = "A"
+  ttl    = 3600
+}
