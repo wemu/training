@@ -34,7 +34,7 @@ variable "aws_region" {
 variable "aws_web_count" {
   type = "string"
 
-  default = "2"
+  default = "3"
 }
 
 #module "example-module" {
