@@ -31,7 +31,7 @@ variable "aws_region" {
   default = "eu-central-1"
 }
 
-variable "aws_web_count" {
+variable "aws_web_count" 
   type = "string"
 
   default = "3"
